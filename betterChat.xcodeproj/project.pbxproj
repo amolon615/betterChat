@@ -14,6 +14,7 @@
 		AC0F7F5C296D7C38007A36AD /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = AC0F7F5B296D7C38007A36AD /* FirebaseStorage */; };
 		AC0F7F5F296DB0B2007A36AD /* MainMessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0F7F5E296DB0B2007A36AD /* MainMessagesView.swift */; };
 		AC0F7F62296DBCA7007A36AD /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0F7F61296DBCA7007A36AD /* FirebaseManager.swift */; };
+		AC0F7F68296DD226007A36AD /* ChatUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0F7F67296DD226007A36AD /* ChatUser.swift */; };
 		ACAE87D1296D603F00509517 /* betterChatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAE87D0296D603F00509517 /* betterChatApp.swift */; };
 		ACAE87D3296D603F00509517 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAE87D2296D603F00509517 /* LoginView.swift */; };
 		ACAE87D5296D604000509517 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACAE87D4296D604000509517 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 		AC0F7F52296D71F1007A36AD /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		AC0F7F5E296DB0B2007A36AD /* MainMessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMessagesView.swift; sourceTree = "<group>"; };
 		AC0F7F61296DBCA7007A36AD /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		AC0F7F67296DD226007A36AD /* ChatUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUser.swift; sourceTree = "<group>"; };
 		ACAE87CD296D603F00509517 /* betterChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = betterChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACAE87D0296D603F00509517 /* betterChatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = betterChatApp.swift; sourceTree = "<group>"; };
 		ACAE87D2296D603F00509517 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -62,6 +64,14 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		AC0F7F66296DD20F007A36AD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AC0F7F67296DD226007A36AD /* ChatUser.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		ACAE87C4296D603F00509517 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +91,7 @@
 		ACAE87CF296D603F00509517 /* betterChat */ = {
 			isa = PBXGroup;
 			children = (
+				AC0F7F66296DD20F007A36AD /* Model */,
 				AC0F7F60296DBC96007A36AD /* Utils */,
 				AC0F7F5D296DB08E007A36AD /* MainMessages */,
 				ACAE87D0296D603F00509517 /* betterChatApp.swift */,
@@ -180,6 +191,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC0F7F68296DD226007A36AD /* ChatUser.swift in Sources */,
 				AC0F7F53296D71F1007A36AD /* ImagePicker.swift in Sources */,
 				AC0F7F5F296DB0B2007A36AD /* MainMessagesView.swift in Sources */,
 				AC0F7F62296DBCA7007A36AD /* FirebaseManager.swift in Sources */,

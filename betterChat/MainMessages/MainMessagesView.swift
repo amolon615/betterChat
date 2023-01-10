@@ -8,23 +8,26 @@
 import SwiftUI
 
 
-struct ChatUser {
-    let uid, email, profileImageUrl: String
-}
+
 
 
 class MainMessagesViewModel: ObservableObject {
     @Published var errorMessage = ""
     @Published var chatUser: ChatUser?
+    @Published var isCurrenltyLoggedOut = false
     
     
-    
+
     init(){
-    fetchCurrentUser()
+        
+        DispatchQueue.main.async {
+            self.isCurrenltyLoggedOut = FirebaseManager.shared.auth.currentUser?.uid == nil
+        }
+        fetchCurrentUser()
     }
     
     
-    private func fetchCurrentUser() {
+     func fetchCurrentUser() {
         
         guard let uid =
                 FirebaseManager.shared.auth.currentUser?.uid else {
@@ -32,6 +35,7 @@ class MainMessagesViewModel: ObservableObject {
             
             return
         }
+        
         
         FirebaseManager.shared.firestore.collection("users")
             .document(uid).getDocument {snapshot, error in
@@ -42,17 +46,21 @@ class MainMessagesViewModel: ObservableObject {
                 }
                 
                 guard let data = snapshot?.data() else { return }
-
-//                self.errorMessage = "Data: \(data.description)"
-                let uid = data["uid"] as? String ?? ""
-                let email = data["email"] as? String ?? ""
-                let profileImageUrl = data["profileImageUrl"] as? String ?? ""
                 
-                self.chatUser = ChatUser(uid: uid, email: email, profileImageUrl: profileImageUrl)
+                self.chatUser = .init(data: data)
                 
-//                self.errorMessage = chatUser.profileImageUrl
                 
             }
+    }
+    
+     func handleSignout(){
+         self.isCurrenltyLoggedOut.toggle()
+         do{
+             try FirebaseManager.shared.auth.signOut()
+         } catch let error {
+             print("failed signout \(error.localizedDescription)")
+         }
+        
     }
     
     
@@ -68,7 +76,7 @@ struct MainMessagesView: View {
         NavigationView {
             //custom nav bar
             VStack{
-                Text(" User: \(vm.chatUser?.uid ?? "")")
+//                Text(" User: \(vm.chatUser?.uid ?? "")")
              customNavBar
              messagesView
             }.overlay(
@@ -131,10 +139,21 @@ struct MainMessagesView: View {
             .init(title: Text("Seetings"), message: Text("What do you want to do?"), buttons: [
                 .destructive(Text("Sign out"), action: {
                     print("sign out")
+                    vm.handleSignout()
                 }),
 //                        .default(Text("Default Button")),
                 .cancel()
             ])
+        }
+        .fullScreenCover(isPresented: $vm.isCurrenltyLoggedOut) {
+            LoginView(didCompleteLoginProcess: {
+                withAnimation(.spring()){
+                    self.vm.isCurrenltyLoggedOut = false
+                    vm.fetchCurrentUser()
+                }
+                
+                
+            })
         }
     }
     
@@ -199,7 +218,6 @@ struct MainMessagesView: View {
 struct MainMessagesView_Previews: PreviewProvider {
     static var previews: some View {
         MainMessagesView()
-            .preferredColorScheme(.dark)
-        MainMessagesView()
+
     }
 }
