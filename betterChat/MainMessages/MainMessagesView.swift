@@ -23,6 +23,7 @@ class MainMessagesViewModel: ObservableObject {
     fetchCurrentUser()
     }
     
+    
     private func fetchCurrentUser() {
         
         guard let uid =
@@ -56,7 +57,6 @@ class MainMessagesViewModel: ObservableObject {
     
     
 }
-
 
 
 
