@@ -15,6 +15,8 @@ struct FirebaseConstants{
     static let toId = "toId"
     static let text = "text"
     static let timestamp = "timestamp"
+    static let profileImageUrl = "profileImageUrl"
+    static let email = "email"
 }
 
 struct ChatMessage: Identifiable {
@@ -131,6 +133,8 @@ class ChatLogViewModel: ObservableObject{
     }
     private func persistRecentMessage(){
         
+        guard let chatUser = chatUser  else { return }
+        
         guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return }
         guard let toId = self.chatUser?.uid else { return }
         
@@ -144,8 +148,14 @@ class ChatLogViewModel: ObservableObject{
             FirebaseConstants.timestamp : Timestamp(),
             FirebaseConstants.text: self.chatText,
             FirebaseConstants.fromId: uid,
-            FirebaseConstants.toId : toId
+            FirebaseConstants.toId : toId,
+            FirebaseConstants.profileImageUrl: chatUser.profileImageUrl,
+            FirebaseConstants.email: chatUser.email
+            
         ] as [String: Any]
+        
+        
+        
         
         document.setData(data) { error in
             if let error = error {
