@@ -14,13 +14,14 @@ struct FirebaseConstants{
     static let fromId = "fromId"
     static let toId = "toId"
     static let text = "text"
+    static let timestamp = "timestamp"
 }
 
 struct ChatMessage: Identifiable {
     var id: String { documentId }
     let documentId: String
     
-    let fromId, toId, text: String
+    let fromId, toId, text, timestamp: String
    
     
     init(documentId: String, data: [String: Any]){
@@ -28,6 +29,7 @@ struct ChatMessage: Identifiable {
         self.fromId = data[FirebaseConstants.fromId] as? String ?? ""
         self.toId = data[FirebaseConstants.toId] as? String ?? ""
         self.text = data[FirebaseConstants.text] as? String ?? ""
+        self.timestamp = data[FirebaseConstants.timestamp] as? String ?? ""
     }
 }
 
@@ -104,6 +106,9 @@ class ChatLogViewModel: ObservableObject{
                  }
                  
                  print("Successfully saved current user sending message")
+            
+                self.persistRecentMessage()
+            
                  self.chatText = ""
                 self.count += 1
              }
@@ -123,6 +128,34 @@ class ChatLogViewModel: ObservableObject{
                  print("Recipient successfully saved message")
                  self.chatText = ""
              }
+    }
+    private func persistRecentMessage(){
+        
+        guard let uid = FirebaseManager.shared.auth.currentUser?.uid else { return }
+        guard let toId = self.chatUser?.uid else { return }
+        
+        let document = FirebaseManager.shared.firestore
+            .collection("recent_messages")
+            .document(uid)
+            .collection("messages")
+            .document(toId)
+        
+        let data = [
+            FirebaseConstants.timestamp : Timestamp(),
+            FirebaseConstants.text: self.chatText,
+            FirebaseConstants.fromId: uid,
+            FirebaseConstants.toId : toId
+        ] as [String: Any]
+        
+        document.setData(data) { error in
+            if let error = error {
+                self.errorMessage = "failed to save recent message \(error)"
+                print("Failed to save recen messafe \(error)")
+                return
+            }
+            
+        }
+        
     }
     
    @Published var count = 0
