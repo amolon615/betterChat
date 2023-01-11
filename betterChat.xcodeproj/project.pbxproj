@@ -21,10 +21,13 @@
 		AC0F7F79296EC923007A36AD /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = AC0F7F78296EC923007A36AD /* FirebaseStorage */; };
 		AC0F7F7B296EC98B007A36AD /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0F7F7A296EC98B007A36AD /* ChatMessage.swift */; };
 		AC0F7F7D296ECA90007A36AD /* RecentMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0F7F7C296ECA90007A36AD /* RecentMessage.swift */; };
+		AC0F7F80296ECE71007A36AD /* MainMessagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0F7F7F296ECE71007A36AD /* MainMessagesViewModel.swift */; };
+		AC0F7F82296ECEAA007A36AD /* NewMessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0F7F81296ECEAA007A36AD /* NewMessageViewModel.swift */; };
 		ACAE87D1296D603F00509517 /* betterChatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAE87D0296D603F00509517 /* betterChatApp.swift */; };
 		ACAE87D3296D603F00509517 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAE87D2296D603F00509517 /* LoginView.swift */; };
 		ACAE87D5296D604000509517 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACAE87D4296D604000509517 /* Assets.xcassets */; };
 		ACAE87D8296D604000509517 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACAE87D7296D604000509517 /* Preview Assets.xcassets */; };
+		ACEF3111296ED004002CAAEE /* ChatLogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEF3110296ED004002CAAEE /* ChatLogViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,11 +41,14 @@
 		AC0F7F6F296EC421007A36AD /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
 		AC0F7F7A296EC98B007A36AD /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
 		AC0F7F7C296ECA90007A36AD /* RecentMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMessage.swift; sourceTree = "<group>"; };
+		AC0F7F7F296ECE71007A36AD /* MainMessagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMessagesViewModel.swift; sourceTree = "<group>"; };
+		AC0F7F81296ECEAA007A36AD /* NewMessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageViewModel.swift; sourceTree = "<group>"; };
 		ACAE87CD296D603F00509517 /* betterChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = betterChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACAE87D0296D603F00509517 /* betterChatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = betterChatApp.swift; sourceTree = "<group>"; };
 		ACAE87D2296D603F00509517 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		ACAE87D4296D604000509517 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACAE87D7296D604000509517 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		ACEF3110296ED004002CAAEE /* ChatLogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,14 +66,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AC0F7F5D296DB08E007A36AD /* MainMessages */ = {
+		AC0F7F5D296DB08E007A36AD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				ACAE87D2296D603F00509517 /* LoginView.swift */,
 				AC0F7F5E296DB0B2007A36AD /* MainMessagesView.swift */,
-				AC0F7F6C296E16AB007A36AD /* Chat */,
-				AC0F7F6B296E032E007A36AD /* NewMessage */,
+				AC0F7F6D296E16BB007A36AD /* ChatLogView.swift */,
+				AC0F7F69296DD46A007A36AD /* NewMessageView.swift */,
 			);
-			path = MainMessages;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		AC0F7F60296DBC96007A36AD /* Utils */ = {
@@ -90,20 +97,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		AC0F7F6B296E032E007A36AD /* NewMessage */ = {
+		AC0F7F7E296ECE5E007A36AD /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				AC0F7F69296DD46A007A36AD /* NewMessageView.swift */,
+				AC0F7F7F296ECE71007A36AD /* MainMessagesViewModel.swift */,
+				AC0F7F81296ECEAA007A36AD /* NewMessageViewModel.swift */,
+				ACEF3110296ED004002CAAEE /* ChatLogViewModel.swift */,
 			);
-			path = NewMessage;
-			sourceTree = "<group>";
-		};
-		AC0F7F6C296E16AB007A36AD /* Chat */ = {
-			isa = PBXGroup;
-			children = (
-				AC0F7F6D296E16BB007A36AD /* ChatLogView.swift */,
-			);
-			path = Chat;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		ACAE87C4296D603F00509517 = {
@@ -125,11 +126,11 @@
 		ACAE87CF296D603F00509517 /* betterChat */ = {
 			isa = PBXGroup;
 			children = (
-				AC0F7F66296DD20F007A36AD /* Model */,
-				AC0F7F60296DBC96007A36AD /* Utils */,
-				AC0F7F5D296DB08E007A36AD /* MainMessages */,
 				ACAE87D0296D603F00509517 /* betterChatApp.swift */,
-				ACAE87D2296D603F00509517 /* LoginView.swift */,
+				AC0F7F66296DD20F007A36AD /* Model */,
+				AC0F7F7E296ECE5E007A36AD /* ViewModel */,
+				AC0F7F5D296DB08E007A36AD /* Views */,
+				AC0F7F60296DBC96007A36AD /* Utils */,
 				ACAE87D4296D604000509517 /* Assets.xcassets */,
 				AC0F7F50296D6922007A36AD /* GoogleService-Info.plist */,
 				ACAE87D6296D604000509517 /* Preview Content */,
@@ -231,11 +232,14 @@
 				AC0F7F7B296EC98B007A36AD /* ChatMessage.swift in Sources */,
 				AC0F7F6A296DD46A007A36AD /* NewMessageView.swift in Sources */,
 				AC0F7F70296EC421007A36AD /* Constraints.swift in Sources */,
+				AC0F7F82296ECEAA007A36AD /* NewMessageViewModel.swift in Sources */,
 				AC0F7F5F296DB0B2007A36AD /* MainMessagesView.swift in Sources */,
 				AC0F7F62296DBCA7007A36AD /* FirebaseManager.swift in Sources */,
 				AC0F7F7D296ECA90007A36AD /* RecentMessage.swift in Sources */,
 				ACAE87D3296D603F00509517 /* LoginView.swift in Sources */,
+				ACEF3111296ED004002CAAEE /* ChatLogViewModel.swift in Sources */,
 				ACAE87D1296D603F00509517 /* betterChatApp.swift in Sources */,
+				AC0F7F80296ECE71007A36AD /* MainMessagesViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

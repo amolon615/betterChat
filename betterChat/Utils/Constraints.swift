@@ -1,12 +1,12 @@
-////
-////  Constraints.swift
-////  betterChat
-////
-////  Created by Artem on 11/01/2023.
-////
 //
-//import Foundation
+//  Constraints.swift
+//  betterChat
 //
+//  Created by Artem on 11/01/2023.
+//
+
+import Foundation
+
 //struct FirebaseConstants {
 //    static let fromId = "fromId"
 //    static let toId = "toId"
@@ -19,3 +19,13 @@
 //    static let users = "users"
 //    static let recentMessages = "recent_messages"
 //}
+
+
+struct FirebaseConstants{
+    static let fromId = "fromId"
+    static let toId = "toId"
+    static let text = "text"
+    static let timestamp = "timestamp"
+    static let profileImageUrl = "profileImageUrl"
+    static let email = "email"
+}
