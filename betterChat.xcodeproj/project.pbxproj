@@ -15,6 +15,8 @@
 		AC0F7F5F296DB0B2007A36AD /* MainMessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0F7F5E296DB0B2007A36AD /* MainMessagesView.swift */; };
 		AC0F7F62296DBCA7007A36AD /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0F7F61296DBCA7007A36AD /* FirebaseManager.swift */; };
 		AC0F7F68296DD226007A36AD /* ChatUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0F7F67296DD226007A36AD /* ChatUser.swift */; };
+		AC0F7F6A296DD46A007A36AD /* NewMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0F7F69296DD46A007A36AD /* NewMessageView.swift */; };
+		AC0F7F6E296E16BB007A36AD /* ChatLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0F7F6D296E16BB007A36AD /* ChatLogView.swift */; };
 		ACAE87D1296D603F00509517 /* betterChatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAE87D0296D603F00509517 /* betterChatApp.swift */; };
 		ACAE87D3296D603F00509517 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACAE87D2296D603F00509517 /* LoginView.swift */; };
 		ACAE87D5296D604000509517 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACAE87D4296D604000509517 /* Assets.xcassets */; };
@@ -27,6 +29,8 @@
 		AC0F7F5E296DB0B2007A36AD /* MainMessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMessagesView.swift; sourceTree = "<group>"; };
 		AC0F7F61296DBCA7007A36AD /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		AC0F7F67296DD226007A36AD /* ChatUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUser.swift; sourceTree = "<group>"; };
+		AC0F7F69296DD46A007A36AD /* NewMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageView.swift; sourceTree = "<group>"; };
+		AC0F7F6D296E16BB007A36AD /* ChatLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogView.swift; sourceTree = "<group>"; };
 		ACAE87CD296D603F00509517 /* betterChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = betterChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACAE87D0296D603F00509517 /* betterChatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = betterChatApp.swift; sourceTree = "<group>"; };
 		ACAE87D2296D603F00509517 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -52,6 +56,8 @@
 			isa = PBXGroup;
 			children = (
 				AC0F7F5E296DB0B2007A36AD /* MainMessagesView.swift */,
+				AC0F7F6C296E16AB007A36AD /* Chat */,
+				AC0F7F6B296E032E007A36AD /* NewMessage */,
 			);
 			path = MainMessages;
 			sourceTree = "<group>";
@@ -60,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				AC0F7F61296DBCA7007A36AD /* FirebaseManager.swift */,
+				AC0F7F52296D71F1007A36AD /* ImagePicker.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -70,6 +77,22 @@
 				AC0F7F67296DD226007A36AD /* ChatUser.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		AC0F7F6B296E032E007A36AD /* NewMessage */ = {
+			isa = PBXGroup;
+			children = (
+				AC0F7F69296DD46A007A36AD /* NewMessageView.swift */,
+			);
+			path = NewMessage;
+			sourceTree = "<group>";
+		};
+		AC0F7F6C296E16AB007A36AD /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				AC0F7F6D296E16BB007A36AD /* ChatLogView.swift */,
+			);
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		ACAE87C4296D603F00509517 = {
@@ -96,7 +119,6 @@
 				AC0F7F5D296DB08E007A36AD /* MainMessages */,
 				ACAE87D0296D603F00509517 /* betterChatApp.swift */,
 				ACAE87D2296D603F00509517 /* LoginView.swift */,
-				AC0F7F52296D71F1007A36AD /* ImagePicker.swift */,
 				ACAE87D4296D604000509517 /* Assets.xcassets */,
 				AC0F7F50296D6922007A36AD /* GoogleService-Info.plist */,
 				ACAE87D6296D604000509517 /* Preview Content */,
@@ -192,7 +214,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC0F7F68296DD226007A36AD /* ChatUser.swift in Sources */,
+				AC0F7F6E296E16BB007A36AD /* ChatLogView.swift in Sources */,
 				AC0F7F53296D71F1007A36AD /* ImagePicker.swift in Sources */,
+				AC0F7F6A296DD46A007A36AD /* NewMessageView.swift in Sources */,
 				AC0F7F5F296DB0B2007A36AD /* MainMessagesView.swift in Sources */,
 				AC0F7F62296DBCA7007A36AD /* FirebaseManager.swift in Sources */,
 				ACAE87D3296D603F00509517 /* LoginView.swift in Sources */,
